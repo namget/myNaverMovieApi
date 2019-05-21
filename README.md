@@ -9,6 +9,10 @@ NaverApi 정보
 [네이버 영화 검색 결과를 출력해주는 REST API](https://developers.naver.com/docs/search/movie/)입니다. 비로그인 오픈 API이므로 GET으로 호출할 때
 HTTP Header에 애플리케이션 등록 시 발급받은 Client ID와 Client Secret 값을 같이 전송해 주시면 활용 가능합니다.
 
+# 영화 API 만들 화면안
+![ex_screenshot](./image/baseImage.png)
+
+
 ### 영화 API 기본 정보
 
 `https://openapi.naver.com/v1/search/movie.json`
