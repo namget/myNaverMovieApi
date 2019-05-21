@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:textSize="20sp"
+                android:text="영화검색"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/searchPlzText"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+                android:id="@+id/searchPlzText"
+                android:textSize="15sp"
+                android:text="검색어를 입력하세요"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/searchMovieName"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchMovieName"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+                android:background="@drawable/ripple_custom"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/searchMovieName"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="검색"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

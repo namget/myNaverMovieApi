@@ -23,6 +23,37 @@ allprojects {
     }
 }
 
+ext{
+    androidXVersion = "1.0.0"
+    androidXAppCompatVersion = "1.0.2"
+    retrofitVersion = "2.4.0"
+    rxAndroidVersion = '2.0.2'
+    constraintVersion = "2.0.0-alpha3"
+    multidexVersion = "2.0.1"
+    rxKotlinVersion = '2.2.0'
+    glideVersion = "4.8.0"
+    playServiceVersion = "17.1.1"
+    searchViewVersion = "1.4.0"
+    tedPermissionVersion = "2.2.0"
+    kaptCompilerVersion = "3.1.2"
+    zxingVersion = "3.6.0"
+    zxingCoreVersion = "3.3.0"
+    jsoupVersion = "1.11.3"
+    httpVersion = "3.8.0"
+    koinVersion = '1.0.1'
+    crashVersion = '2.9.8'
+    firebaseVersion = '16.0.5'
+    lifecycleVersion = '2.0.0'
+    calandarVersion = '1.5.0'
+    typekitVersion = '1.0.1'
+    roomVersion = "2.1.0-alpha03"
+    coroutineVersion = "1.1.0"
+    bioMetricVersion = '1.0.0-alpha03'
+    lottieVersion = '2.8.0'
+    billingVersion = '1.2'
+}
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
