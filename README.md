@@ -43,3 +43,7 @@ country | string | N | - | 검색을 원하는 국가 코드를 의미한다. �
 | | | | | 기타 (ETC)
 yearfrom | integer(ex : 2000) | N | - | 검색을 원하는 영화의 제작년도(최소)를 의미한다. yearfrom은 yearto와 함께 사용되어야 한다.
 yearto | integer(ex : 2008) | N | - | 검색을 원하는 영화의 제작년도(최대)를 의미한다. yearto는 yearfrom과 함께 사용되어야 한다.
+
+"https://openapi.naver.com/v1/search/movie.json?query={사용자 입력 검색어}&display=10&genre=1" \
+    -H "X-Naver-Client-Id: {애플리케이션 등록 시 발급받은 client id 값}" \
+    -H "X-Naver-Client-Secret: {애플리케이션 등록 시 발급받은 client secret 값}" -v
