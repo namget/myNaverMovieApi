@@ -29,34 +29,42 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    def androidXAppCompatVersion = "1.0.2"
     implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    def androidXVersion = "1.0.0"
     implementation "androidx.cardview:cardview:$androidXVersion"
     implementation "com.google.android.material:material:$androidXVersion"
+    implementation "androidx.vectordrawable:vectordrawable:$androidXVersion"
+    def constraintVersion = "2.0.0-alpha3"
     implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
 
-
-
     //rx
+    def rxAndroidVersion = '2.0.2'
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    def rxKotlinVersion = '2.2.0'
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
     //retrofit
+    def retrofitVersion = "2.4.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 
     //okhttp
+    def httpVersion = "3.8.0"
     implementation "com.squareup.okhttp3:okhttp:$httpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$httpVersion"
 
     //glide
+    def glideVersion = "4.8.0"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
-    implementation "androidx.vectordrawable:vectordrawable:$androidXVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
 
     //lifecycle (ViewModel and LiveData)
+    def lifecycleVersion = "2.0.0"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
 
     //koin
+    def koinVersion = '1.0.1'
     implementation "org.koin:koin-android:$koinVersion"
 
     testImplementation 'junit:junit:4.12'
