@@ -1,8 +1,11 @@
 package com.namget.naverapi.di
 
+import android.widget.SearchView
 import com.google.gson.GsonBuilder
 import com.namget.naverapi.BuildConfig
 import com.namget.naverapi.data.remote.ApiService
+import com.namget.naverapi.data.remote.NetworkRepository
+import com.namget.naverapi.ui.search.SearchViewModel
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -34,6 +37,16 @@ val apiModules: Module = module {
             baseUrl(BASEURL)
         }.build().create(ApiService::class.java)
     }
+
+
+
+    single {
+        NetworkRepository(get())
+    }
+    factory{
+        SearchViewModel()
+    }
+
 
 }
 val appModules = listOf(apiModules)
