@@ -5,15 +5,20 @@ import com.google.gson.GsonBuilder
 import com.namget.naverapi.BuildConfig
 import com.namget.naverapi.data.remote.ApiService
 import com.namget.naverapi.data.remote.NetworkRepository
+import com.namget.naverapi.data.remote.Repository
 import com.namget.naverapi.ui.search.SearchViewModel
+import com.namget.naverapi.ui.search.SearchViewModelFactory
 import io.reactivex.schedulers.Schedulers
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.Module
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 const val BASEURL = "https://openapi.naver.com"
 
@@ -27,7 +32,17 @@ val apiModules: Module = module {
         } else {
             interceptor.setLevel(HttpLoggingInterceptor.Level.NONE)
         }
-        val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
+        val headerInterceptor = Interceptor {
+            val original = it.request()
+            val request = original.newBuilder()
+                .header("X-Naver-Client-Id", "lih3bjz8wm5kjJhL8Grx")
+                .header("X-Naver-Client-Secret", "pNsddDIvgZ")
+                .method(original.method(), original.body())
+                .build()
+            it.proceed(request)
+        }
+
+        val client = OkHttpClient.Builder().addInterceptor(interceptor).addInterceptor(headerInterceptor).build()
 
 
         Retrofit.Builder().apply {
@@ -41,12 +56,13 @@ val apiModules: Module = module {
 
 
     single {
-        NetworkRepository(get())
+        NetworkRepository(get()) as Repository
     }
-    factory{
-        SearchViewModel()
-    }
-
-
 }
-val appModules = listOf(apiModules)
+val modelModule = module {
+    factory {
+        SearchViewModelFactory(get())
+    }
+}
+
+val appModules = listOf(apiModules, modelModule)
