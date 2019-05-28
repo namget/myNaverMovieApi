@@ -65,11 +65,8 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
     }
 
     fun setAutoSearchView(list: List<String>) {
-        val adapter = autoSearchView.adapter
-        adapter?.let {
-            Log.e("test", "in list")
-            (it as SearchAdapter).setData(list)
-        }
+        searchAdapter.setData(list)
+        searchAdapter.notifyDataSetChanged()
     }
 
 

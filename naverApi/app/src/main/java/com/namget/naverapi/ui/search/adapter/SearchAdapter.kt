@@ -7,13 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.annotation.NonNull
 import com.namget.naverapi.R
 
 
 class SearchAdapter(val mContext: Context, val resource: Int, val list: MutableList<String>) :
-    ArrayAdapter<String>(mContext, resource, list) {
+    ArrayAdapter<String>(mContext, resource, list)  , Filterable{
 
     override fun getCount(): Int = list.size
     override fun getItem(position: Int): String? = list[position]
@@ -39,6 +40,7 @@ class SearchAdapter(val mContext: Context, val resource: Int, val list: MutableL
 
             return results
         }
+
 
         private fun autocomplete(input: String): MutableList<String> {
             val results = arrayListOf<String>()
