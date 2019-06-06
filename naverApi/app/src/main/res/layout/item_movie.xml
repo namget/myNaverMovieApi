@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <variable name="model" type="com.namget.naverapi.data.model.Movie"></variable>
 
     </data>
 
@@ -45,7 +46,7 @@
         />
 
         <TextView
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_red_light"
                 android:text="9.99"
                 android:id="@+id/movieRatingText"
                 android:layout_width="wrap_content"
@@ -110,7 +111,7 @@
 
 
         <ImageView
-                android:id="@+id/movieFavorite"
+                android:id="@+id/movieStar"
                 android:src="@drawable/ic_star_border_black_24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -36,6 +36,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         searchViewModel = ViewModelProviders.of(this, searchViewModelFactory).get(SearchViewModel::class.java)
         binding.viewmodel = searchViewModel
 
+        searchViewModel.initAutoSet()
         searchViewModel.event.observe(this, Observer {
             it.getContentIfNotHandled()?.let {
                 if (it == searchViewModel.SEARCH_CLICK) {

@@ -6,6 +6,7 @@ import com.namget.naverapi.BuildConfig
 import com.namget.naverapi.data.remote.ApiService
 import com.namget.naverapi.data.remote.NetworkRepository
 import com.namget.naverapi.data.remote.Repository
+import com.namget.naverapi.ui.movie.MovieViewModelFactory
 import com.namget.naverapi.ui.search.SearchViewModel
 import com.namget.naverapi.ui.search.SearchViewModelFactory
 import io.reactivex.schedulers.Schedulers
@@ -62,6 +63,9 @@ val apiModules: Module = module {
 val modelModule = module {
     factory {
         SearchViewModelFactory(get())
+    }
+    factory {
+        MovieViewModelFactory(get())
     }
 }
 

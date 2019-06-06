@@ -26,8 +26,7 @@ class SearchViewModel(val repository: Repository) : BaseViewModel() {
     val autoTextBehaviorSubject = BehaviorSubject.create<String>()
     val SEARCH_CLICK = "SEARCH_CLICK"
 
-
-    init {
+    fun initAutoSet(){
         addDisposable(
             autoTextBehaviorSubject.subscribeOn(Schedulers.newThread())
                 .throttleLast(2500, TimeUnit.MILLISECONDS)

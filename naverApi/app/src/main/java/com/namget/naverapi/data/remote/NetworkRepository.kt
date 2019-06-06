@@ -11,13 +11,12 @@ import io.reactivex.schedulers.Schedulers
 class NetworkRepository(val apiService: ApiService) : Repository {
 
 
+    override fun getMovieList(query: String, display: Int?, start: Int): Single<MovieResult> =
+        apiService.getMovieList(query, display, start)
 
-    override fun getMovieList(query: String, display: Int?): Single<MovieResult> =
-        apiService.getMovieList(query, display)
 
-
-    override fun getMovieTitleList(query: String, display: Int?) : Single<List<Movie>>{
-        return apiService.getMovieList(query,display).subscribeOn(Schedulers.io())
+    override fun getMovieTitleList(query: String, display: Int?): Single<List<Movie>> {
+        return apiService.getMovieList(query, display).subscribeOn(Schedulers.io())
             .map { it.items }
     }
 }

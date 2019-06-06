@@ -5,6 +5,6 @@ import com.namget.naverapi.data.model.MovieResult
 import io.reactivex.Single
 
 interface Repository {
-    fun getMovieList(query: String, display: Int?): Single<MovieResult>
-    fun getMovieTitleList(query: String, display: Int?) : Single<List<Movie>>
+    fun getMovieList(query: String, display: Int?, start: Int): Single<MovieResult>
+    fun getMovieTitleList(query: String, display: Int?): Single<List<Movie>>
 }
