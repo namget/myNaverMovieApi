@@ -15,7 +15,7 @@ open class BaseApplicationViewModel(application: Application) : AndroidViewModel
 
 
     override fun onCleared() {
-        compositeDisposable.clear()
+        compositeDisposable.dispose()
         super.onCleared()
     }
 }

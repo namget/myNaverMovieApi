@@ -30,7 +30,7 @@ class SearchViewModel(val repository: Repository) : BaseViewModel() {
     init {
         addDisposable(
             autoTextBehaviorSubject.subscribeOn(Schedulers.newThread())
-                .throttleLast(3500, TimeUnit.MILLISECONDS)
+                .throttleLast(2500, TimeUnit.MILLISECONDS)
                 .concatMap {
                     Log.e("test", "test ${it}")
                     repository.getMovieTitleList(it, null).toObservable()

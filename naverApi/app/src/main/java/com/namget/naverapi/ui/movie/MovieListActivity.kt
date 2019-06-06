@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.namget.naverapi.R
 import com.namget.naverapi.databinding.ActivityMovielistBinding
 import com.namget.naverapi.ui.base.BaseActivity
+import com.namget.naverapi.util.Extra
 
 class MovieListActivity : BaseActivity<ActivityMovielistBinding>() {
 
@@ -13,6 +14,13 @@ class MovieListActivity : BaseActivity<ActivityMovielistBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        init()
+    }
+
+    fun init() {
+        intent.extras?.let {
+            it.getString(Extra.MOVIE_NAME)
+        }
     }
 
 
