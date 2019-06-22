@@ -36,7 +36,7 @@ class SearchViewModel(val repository: Repository) : BaseViewModel() {
                 }
                 .map { it.map { it.title.htmlToString() } }
                 .subscribe({
-                    Log.e("test", "test ${it}")
+                    Log.e("test", "test $it}")
                     _autoText.postValue(it)
                 }, {
                     Log.e("test", "test ${it}")

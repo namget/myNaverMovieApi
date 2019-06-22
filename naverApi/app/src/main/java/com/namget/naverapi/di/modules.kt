@@ -1,18 +1,15 @@
 package com.namget.naverapi.di
 
-import android.widget.SearchView
 import com.google.gson.GsonBuilder
 import com.namget.naverapi.BuildConfig
 import com.namget.naverapi.data.remote.ApiService
 import com.namget.naverapi.data.remote.NetworkRepository
 import com.namget.naverapi.data.remote.Repository
 import com.namget.naverapi.ui.movie.MovieViewModelFactory
-import com.namget.naverapi.ui.search.SearchViewModel
 import com.namget.naverapi.ui.search.SearchViewModelFactory
 import io.reactivex.schedulers.Schedulers
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.Module
 import org.koin.dsl.module.module
