@@ -30,6 +30,8 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         super.onCreate(savedInstanceState)
         init()
         initViewModel()
+
+        Log.d("MyTag","BlackJIn")
     }
 
     fun initViewModel() {
