@@ -30,6 +30,9 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         super.onCreate(savedInstanceState)
         init()
         initViewModel()
+
+        Log.d("MyTag","BlackJIn")
+        Log.d("MyTag","내맘이야")
     }
 
     fun initViewModel() {
