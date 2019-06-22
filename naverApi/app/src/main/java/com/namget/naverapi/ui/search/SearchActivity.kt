@@ -32,6 +32,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         initViewModel()
 
         Log.d("MyTag","BlackJIn")
+        Log.d("MyTag","내맘이야")
     }
 
     fun initViewModel() {
